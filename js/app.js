@@ -810,7 +810,8 @@ $rootScope.allItems = {
             "description": $rootScope.items[index].description,
             "price": $rootScope.items[index].price,
             "id": $rootScope.items[index].id,
-            "room": $rootScope.pageTitle
+            "room": $rootScope.pageTitle,
+            "index": index
           });
         }
       }
@@ -825,14 +826,25 @@ $rootScope.allItems = {
         case "/:living":
             $rootScope.items = $rootScope.allItems.livingRoom;
             $rootScope.pageTitle = "Living Room";
+            setTimeout(reCheckBoxes, 1000);
             break;
         case "/:entrance":
             $rootScope.items = $rootScope.allItems.entrance;
             $rootScope.pageTitle = "Entrance";
+            setTimeout(reCheckBoxes, 1000);
             break;
         default:
             break;
     }
-    // re-check relevvant checkboxes    
+    // re-checking already checked checkboxes    
+    function reCheckBoxes() {
+        let checkboxes = document.querySelectorAll("input[type='checkbox']");
+        for (let i = 0; i < $rootScope.itemsToBeReplaced.length; i++) {
+            if ($rootScope.itemsToBeReplaced[i].room === $rootScope.pageTitle) {
+                let index = Number($rootScope.itemsToBeReplaced[i].index);
+                checkboxes[index].checked = true;
+            }
+        }
+    }
   });
 });
