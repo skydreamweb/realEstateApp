@@ -1,0 +1,32 @@
+<div class="con-custom" ng-controller="constructionCtrl">
+  <div class="panel">
+  <div class="panel-heading text-center">
+    <h3>Construction</h3>
+  </div>
+  <div class="float-right mb-2">
+  <a href="#/" class="btn-sm btn-warning">Back</a>
+  </div>
+  <div class="panel-body">
+      <table class="table table-bordered bordere table-striped table-condensed datatable" ui-jq="dataTable" ui-options="dataTableOpt">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>SubCat</th>
+          <th>Item</th>
+          <th>$ Price</th>
+          <th>✓</th>
+        </tr>
+      </thead>
+        <tbody>
+          <tr ng-repeat="n in data">
+            <td>{{$index+1}}</td>
+            <td>{{n[0]}}</td>
+            <td>{{n[1]}}</td>
+            <td>{{n[2]}}</td>
+            <td><input type="checkbox" class="checkbox-inline""></td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
+</div>

@@ -1,0 +1,35 @@
+<div class="con-custom">
+    <div class="panel">
+        <div class="panel-heading text-center">
+            <h3>{{pageTitle}}</h3>
+        </div>
+        <div class="float-right mb-2">
+            <a href="#/rooms" class="btn-sm btn-warning">Back</a>
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered bordere table-striped table-condensed datatable" ui-jq="dataTable"
+                ui-options="dataTableOpt">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>SubCat</th>
+                        <th>Item</th>
+                        <th>$</th>
+                        <th>✓</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in items">
+                        <td>{{$index+1}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.description}}</td>
+                        <td class="text-right">{{item.price.toFixed(2)}}</td>
+                        <td>
+                            <input type="checkbox" class="checkbox-inline" data-item="{{$index}}">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
