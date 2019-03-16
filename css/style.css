@@ -81,12 +81,12 @@ div.main{
 }
 div.main-welcome {
  background-color: #FEFFED;
- width: 90%;
+ width: 95%;
  padding: 10px 5px 10px;
  border: 2px solid gray;
  border-radius: 10px;
  font-family: raleway;
- margin-top:50px;
+ margin-top:20px;
 }
 
 input[type=text],input[type=password]{
@@ -158,6 +158,7 @@ header {
 .subnames {
   text-align: center;
   font-size: 12px;
+  color: black;
 }
 table tr th{
   background:#337ab7;
@@ -169,7 +170,7 @@ table tr th{
 .panel {
   font-size: 1.5vh;
   background-color: #FEFFED;
-  width: 90%;
+  width: 95%;
   border: 2px solid gray;
   border-radius: 10px;
   font-family: raleway;
